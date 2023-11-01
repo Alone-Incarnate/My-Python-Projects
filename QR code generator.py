@@ -2,7 +2,7 @@ import qrcode
 from PIL import Image
 
 # The URL you want to encode in the QR code
-url = "https://www.facebook.com/profile.php?id=100027034642492"
+url = "Your url here"
 
 # Create the QR code without the logo
 qr = qrcode.QRCode(
@@ -16,7 +16,7 @@ qr.make(fit=True)
 qr_img = qr.make_image(fill_color="black", back_color="white")
 
 # Open and resize the logo image
-logo_path = "facebook1.png"
+logo_path = "image_address.png"
 logo_img = Image.open(logo_path)
 logo_img = logo_img.resize((50, 50))  # Adjust the size as needed
 
@@ -27,4 +27,4 @@ position = ((qr_img.size[0] - logo_img.size[0]) // 2, (qr_img.size[1] - logo_img
 qr_img.paste(logo_img, position)
 
 # Save the image with the logo
-qr_img.save("facebook qr.png")
+qr_img.save("qr.png")
